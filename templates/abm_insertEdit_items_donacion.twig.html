@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+           
+            <div class="formularioAltaItemsDonacion">
+                <h1>Formulario de Alimentos Donados</h1>
+                <form class="altaItems" name="altaItems" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{donacion.id}}" hidden></li>
+                    <fieldset>
+                        <legend class="items_donacion">{{titulo}}</legend> 
+                        <ul>             
+
+                          <li><label for="alimento">Alimento:</label>  
+                          <select id="alimento" name="alimento">
+                             {% for alimento in alimentos %} 
+                                <option value="{{alimento.codigo}}">{{alimento.descripcion}}</option>
+                             {% endfor %}
+
+                          </select></li><li><label for="detalle">Detalle:</label>  
+                          <select id="detalle" name="detalle">                     
+                          </select></li>
+
+                          <li><label for="vencimiento">Fecha Vencimiento:</label>  
+                          <input type="date" id="vencimiento" name="vencimiento"  placeholder="Fecha de Vencimiento"></li> 
+
+                          <li><label for="cantidad">Cantidad:</label>  
+                          <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad"></li>             
+
+                          <li><input id="addDetalle" class="btnAgregarAlimento" type="button" value="Agregar alimento"></li>
+                       
+                        </ul> 
+                             
+                    </fieldset>
+
+                    <table id="tablaDetalle">
+                        <thead>
+                           <tr class="encabezado">
+                              <th class="th_detalle_alimento">Cantidad</th>
+                              <th class="th_alimento">Alimento</th>
+                              <th class="th_contenido">Contenido</th>
+                              <th class="th_fecha">Vencimiento</th>
+                              <th class="th_botones">Operaciones</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                          {% for detalle in detalles %}
+                              <tr>
+                                 <td><input id="cant" hidden value="{{detalle.cantidad}}">{{detalle.cantidad}}</td>
+                                  <td>{{detalle.descripcion}}</td>
+                                  <td><input id="det_id" hidden value="{{detalle.detalle_alimento_id}}">{{detalle.contenido}}</td>
+                                  <td><input id="ven" hidden value="{{detalle.vencimiento}}">{{detalle.vencimiento}}</td>
+                                  <td><a class="eliminar"><img src="imagenes/eliminar.png" alt="eliminar" title="Eliminar"></a></td>
+                              </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+                   <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li> 
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+    <script type="text/javascript"> 
+       //Carga por ajax el detalle cuando carga la pagina.
+      cargarDetallesAlimento($("#alimento"));
+    </script>
+</body> 
+</html> 

@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            {% include 'const/mensaje.twig.html' %}
+
+            <!--    <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+                <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+            
+            <section >  
+
+                <input class="btnAgregarAlimento" type="submit" onclick="location.href='backend.php?ctl=alta_detalle_alimento'"  value="Agregar Alimento" >
+                <form name="alta_alimento"  method="post" accept-charset="utf-8">
+                        <div class="busqueda">
+                            <label>Buscar</label>
+                            <input class="buscar" type="search" id="descripcion" name="descripcion" >   
+                        </div>
+                </form>
+
+                <div class="clear"></div>
+                <table class="tablaDetalleAlimento">
+                    <caption><h1>Registro de Alimentos</h1></caption>
+                    <thead>
+                        <tr class="encabezado">
+                            <th class="th_codigo">Contenido</th>
+                            <th class="th_descripcion">Alimento</th>
+                            <th class="th_descripcion">Codigo</th>
+                            <th class="th_descripcion">Peso</th>
+                            <th class="th_descripcion">Stock</th>
+                            <th class="th_descripcion">Reservado</th>
+                            <th class="th_botones">Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for detalle in detalle_alimentos %}
+                            <tr>
+                                <td class="td_descripcion">{{detalle.contenido}}</td>
+                                <td class="td_codigo">{{detalle.descripcion}}</td>
+                                <td class="td_codigo">{{detalle.alimento_codigo}}</td>
+                                <td class="td_codigo">{{detalle.peso_paquete}}</td>
+                                <td class="td_codigo">{{detalle.stock}}</td>
+                                <td class="td_codigo">{{detalle.reservado}}</td>
+                                <td class="td_botones"> 
+                                <a href="backend.php?ctl=editar_detalle_alimento&id={{detalle.id}}"><img src="imagenes/Edit16.png" alt="modificar" title="Modificar"></a>
+                                <a href="backend.php?ctl=eliminar_detalle_alimento&id={{detalle.id}}" onclick="return confirm('¿Esta seguro que desea borrar {{detalle.codigo}} -> {{detalle.descripcion}}?')"><img src="imagenes/errase24.png" alt="eliminar" title="Eliminar"></a> 
+                                </td>
+                            </tr>
+                        {% endfor%}
+                        
+                    </tbody>
+                </table>    
+            </section>
+            
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

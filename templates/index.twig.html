@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+
+			<nav class="menu">
+				<ul>
+					<li><a href="index.php" class="color_active">INICIO</a></li>
+					<li><a href="index.php?ctl=linked_in">NOSOTROS</a></li>
+					<li><a>VOLUNTARIADO</a></li>
+					<li><a href="index.php?ctl=resumen_entidades">AYUDAMOS A</a></li>
+					<li><a href="index.php?ctl=resumen_donantes">DONANTES</a></li>
+					<li><a>COLABORADORES</a></li>
+					<li><a>CONTACTO</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+			<div class="login" ><a href="index.php?ctl=login">Login</a></div>
+			<h1>Bienvenidos al Banco Alimentario de La Plata</h1>
+		
+			<div class="content_voluntariado">
+			    <div class="desc_voluntariado">
+			       
+			    </div>
+			    <img src="imagenes/voluntariado-cooperativo.jpg" class="img_voluntariado" alt="Voluntariado">
+			</div>		
+			
+			<div class="content_comedor">
+			    <div class="desc_comedor">
+			        <p>NUESTROS PROYECTOS</p>
+			    </div>
+			    <img src="imagenes/imagen-comedores.jpg" class="img_comedor" alt="Comedores">
+			</div>
+
+			<div class="content_comedor">
+			    <div class="desc_comedor">
+			        <p>¿QUERES SER VOLUNTARIO?</p>
+			    </div>
+			    <img src="imagenes/sumate-como-voluntario.jpg" class="img_comedor" alt="Sumate como voluntario">
+			</div>
+
+			<div class="content_comedor">
+			    <div class="desc_comedor">
+			        <p>ENTIDADES</p>
+			    </div>
+			    <a href="index.php?ctl=resumen_entidades"><img src="imagenes/nene-con-hambre.png" class="img_comedor" alt="Nene con hambre"></a>
+			</div>
+			
+			<div class="content_comedor">
+			    <div class="desc_comedor">
+			        <p>DONANTES</p>
+			    </div>
+			    <a href="index.php?ctl=resumen_donantes"><img src="imagenes/mailchimp.jpg" class="img_comedor" alt="Colecta de leche"></a>
+			</div>	
+
+		</div>
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer.twig.html' %}
+</body> 
+</html> 

@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+			<div class="clear"></div>
+			{% include 'const/menu_backend.twig.html' %}
+			
+			<!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+				<li><span><a href="abm_donantes.php?action=listAdmin" class="color_active">DONANTES</a></span></li> -->
+			<h1>Formulario de Donantes</h1>					
+			<div class="formularioAltaAlimento">
+				<form name="altaDonante" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+					<input type="text" id="id" name="id" value="{{donante.id}}" hidden></li>
+					<fieldset>
+						<legend>{{titulo}}</legend>	
+						<ul>  
+				            <li class="required"><label for="razon_social">Razon Social:</label>  
+				            <input type="text" id="razon_social" name="razon_social" value="{{donante.razon_social}}" placeholder="Nombre Razon Social" required></li> 
+
+				            <li class="required"><label for="apellido">Apellido:</label>  
+				            <input type="text" id="apellido" name="apellido" value="{{donante.apellido_contacto}}" placeholder="Apellido Donante" required></li>
+
+				            <li class="required"><label for="nombre">Nombre:</label>  
+				            <input type="text" id="nombre" name="nombre" value="{{donante.nombre_contacto}}" placeholder="Nombre Donante" required></li>
+
+				            <li class="required"><label for="domicilio">Domicilio:</label>  
+				            <input type="text" id="domicilio" name="domicilio" value="{{donante.domicilio_contacto}}" placeholder="Domicilio Donante" required></li>
+
+				            <li class="required"><label for="telefono">Telefono:</label>  
+				            <input type="tel" id="telefono" name="telefono" value="{{donante.telefono_contacto}}" placeholder="Telefono Donante" required></li>
+				            
+				            <li class="required"><label for="mail">Mail:</label>  
+				            <input type="mail" id="mail" name="mail" value="{{donante.mail_contacto}}" placeholder="Mail Donante" required></li>
+
+				            <li>  
+				            <input class="btnAltaAlimento" type="submit" value="Guardar"></li>  
+				        </ul> 
+					</fieldset>
+				</form>
+			</div>	
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

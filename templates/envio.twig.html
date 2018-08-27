@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+    
+                    <!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+                    <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+
+            <div class="formularioAltaPedido">
+                <h1>Formulario de Envio</h1>
+                
+                <form class="altaEnvio" name="altaEnvio" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{envio.numero}}" hidden>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul> 
+                           <li><label for="estado">Estado del Pedido:</label>  
+                           <select id="estado" name="estado" required>
+                               {% for estado in estados %}
+                                    {% if estado.id==envio.estado_pedido_id %}
+                                        <option value="{{estado.id}}" selected>{{estado.descripcion}}</option>
+                                    {% else %}
+                                        <option value="{{estado.id}}">{{estado.descripcion}}</option>
+                                    {% endif %}
+                               {% endfor %}
+                           </select></li>
+
+                            <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>  
+                        </ul> 
+                    </fieldset>
+                </form>
+            </div> 
+            <table class="tablaEnvios">
+                <caption><h1>Puntos de Entrega</h1></caption>
+                <thead>
+                    <tr class="encabezado">                      
+                        <th class="th_entidad">Entidad</th>
+                        <th class="th_fecha">Entrega</th>
+                        <th class="th_hora">Hora</th>
+                        <th class="th_estado">Estado</th>
+                        <th class="th_estado" hidden>Latitud</th> 
+                        <th class="th_estado" hidden>Longitud</th>                    
+                    </tr>
+                </thead>
+                <tbody>                 
+                    <tr>
+                        <td class="td_entidad">{{envio.razon_social}}</td>
+                        <td class="td_fecha">{{envio.fecha}}</td>
+                        <td class="td_hora">{{envio.hora}}</td>
+                        <td class="td_estado">{{envio.descripcion}}</td>
+                        <td class="td_latitud" hidden>{{envio.latitud}}</td>
+                        <td class="td_longitud" hidden>{{envio.longitud}}</td>
+                    </tr>     
+                </tbody>
+            </table> 
+            <div class="clear"></div> 
+            <!--MAPA DE ENVIOS-->
+            <div id="mapa">
+                <input id="latitud" hidden value="{{configuracion.latitud}}">
+                <input id="longitud" hidden value="{{configuracion.longitud}}">
+                <input id="destino_latitud" hidden value="{{envio.latitud}}">
+                <input id="destino_longitud" hidden value="{{envio.longitud}}">
+                <div id="map-canvas"></div>
+            </div>
+
+
+            <!--MAPA DE ENVIOS-->
+
+            <div class="clima" >               
+                <p><strong>Pronóstico del clima: </strong>{{clima.descripcion}} | {{clima.temp |number_format(0, ',', '.') }} ºC</p>
+                <img src="{{clima.url}}" />
+                <p><strong>Ciudad: </strong>{{clima.ciudad}}</p>
+                <p><strong>Máxima: </strong>{{clima.tempMax |number_format(1, ',', '.')}}ºC</p>
+                <p><strong>Mínima: </strong>{{clima.tempMin |number_format(1, ',', '.')}}ºC</p>
+                <p> <strong>Presión: </strong>{{clima.presion |number_format(2, ',', '.')}} hPa</p>
+                <p> <strong>Humedad: </strong>{{clima.humedad |number_format(1, ',', '.') }}%</p>    
+            </div> 
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+    <script type="text/javascript" src="js/googlemaps.js"></script>
+</body> 
+</html> 

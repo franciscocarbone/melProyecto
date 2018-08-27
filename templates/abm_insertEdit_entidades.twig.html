@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+			{% include 'const/log_usuario.twig.html' %}
+			<div class="clear"></div>
+			{% include 'const/menu_backend.twig.html' %}
+			<!--<li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+			
+			<li><span><a href="abm_entidades.php?action=listAdmin" class="color_active">ENTIDADES</a></span></li> -->
+			<h1>Formulario de Entidades</h1>
+			<div class="formularioAltaAlimento">
+				<form name="altaEntidad" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+					<input type="text" id="id" name="id" value="{{entidad.id}}" hidden></li>
+					<fieldset>
+						<legend>{{titulo}}</legend>	
+						<ul>  
+						   <li class="required"><label for="razon_social">Razon Social:</label>  
+						   <input type="text" id="razon_social" name="razon_social" value="{{entidad.razon_social}}" placeholder="Nombre Razon Social" required></li> 
+					
+						   <li class="required"><label for="telefono">Telefono:</label>  
+						   <input type="tel" id="telefono" name="telefono" value="{{entidad.telefono}}" placeholder="Telefono Entidad" required></li> 
+					
+						   <li class="required"><label for="domicilio">Domicilio:</label>  
+						   <input type="text" id="domicilio" name="domicilio" value="{{entidad.domicilio}}" placeholder="Domicilio Razon Social" required></li>
+					
+						   <li><label for="estado">Estado:</label>  
+						   <select id="estado" name="estado" required>
+							   {% for estado in estados %}
+							   		{% if estado.id==entidad.estado_entidad_id %}
+							   			<option value="{{estado.id}}" selected>{{estado.descripcion}}</option>
+							   		{% else %}
+							   			<option value="{{estado.id}}">{{estado.descripcion}}</option>
+							   		{% endif %}
+							   {% endfor %}
+						   </select></li>
+					
+						   <li><label for="necesidad">Necesidad:</label>  
+						   <select id="necesidad" name="necesidad" required>
+							   	{% for necesidad in necesidades %}
+							   		{% if necesidad.id==entidad.necesidad_entidad_id %}
+							   			<option value="{{necesidad.id}}" selected>{{necesidad.descripcion}}</option>
+							   		{% else %}
+							   			<option value="{{necesidad.id}}">{{necesidad.descripcion}}</option>
+							   		{% endif %}
+								{% endfor %}
+							</select></li>
+						   <li><label for="servicio_prestado">Servicio Prestado:</label>  
+						   <select id="servicio_prestado" name="servicio_prestado" required>
+							   {% for servicio in servicios %}
+							   		{% if servicio.id==entidad.servicio_prestado_id %}
+							   			<option value="{{servicio.id}}" selected>{{servicio.descripcion}}</option>
+							   		{% else %}
+							   			<option value="{{servicio.id}}">{{servicio.descripcion}}</option>
+							   		{% endif %}
+							   {% endfor %}
+						   </select></li>
+
+						   <li><label for="latitud">Latitud:</label>  
+						   <input type="text" id="latitud" name="latitud" value="{{entidad.latitud}}" placeholder="Latitud de la Entidad"></li>
+
+						   <li><label for="longitud">Longitud:</label>  
+						   <input type="text" id="longitud" name="longitud" value="{{entidad.longitud}}" placeholder="Longitud de la Entidad"></li>
+
+						   <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>		   
+				       	</ul> 
+					         
+					</fieldset>
+				</form>
+			</div>	
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

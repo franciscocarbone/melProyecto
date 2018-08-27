@@ -1,0 +1,11 @@
+{% if mensajeTipo =='ERROR' %}
+    <div class="mensajeError">
+        <a >{{mensajeError}}</a>
+    </div>
+{% elseif mensajeTipo =='SUCCESS'%}
+    <div class="mensajeConfirmacion">
+        <a >{{mensajeConfirmacion}}</a>
+    </div>
+{% endif %}
+
+

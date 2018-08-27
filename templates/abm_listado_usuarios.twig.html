@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            {% include 'const/mensaje.twig.html' %}
+            
+            <!--    <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+                <li><span><a href="abm_entidades.php?action=listAdmin" class="color_active">ENTIDADES</a></span></li> -->
+        
+            
+            <section >
+                    
+                <input class="btnAgregarUsuario" type="submit" onclick="location.href='backend.php?ctl=alta_usuario'"  value="Agregar Usuario" >   
+                <form name="alta_entidad"  method="post" accept-charset="utf-8">
+                        <div class="busqueda">
+                            <label>Buscar</label>
+                            <input class="buscar" type="search" id="descripcion" name="descripcion" >   
+                        </div>
+                </form>
+
+                <div class="clear"></div>
+                <table class="tablaAbmListadoEntidades">
+                    <caption><h1>Registro de Usuarios</h1></caption>
+                        <thead>
+                           <tr class="encabezado">
+                           <th class="th_razon_social">Usuario</th>
+                           <th class="th_razon_social">Apellido</th>
+                            <th class="th_razon_social">Nombre</th>
+                            <th class="th_telefono">Rol</th>
+                            <th class="th_botones">Operaciones</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            {% for usuario in usuarios %}
+                                <tr>
+
+                                    <td class="td_razon_social">{{usuario.usuario}}</td>
+                                    <td class="td_razon_social">{{usuario.apellido}}</td>
+                                    <td class="td_razon_social">{{usuario.nombre}}</td>
+                                    <td class="td_telefono">{{usuario.descripcion}}</td>
+                                    <td class="td_botones"> 
+                                    <a href="backend.php?ctl=editar_usuario&id={{usuario.usuario_id}}"><img src="imagenes/Edit16.png" alt="modificar" title="Modificar"></a>
+                                    <a href="backend.php?ctl=eliminar_usuario&id={{usuario.usuario_id}}" onclick="return confirm('¿Esta seguro que desea borrar el usuario {{usuario.usuario}}?')"><img src="imagenes/errase24.png" alt="eliminar" title="Eliminar"></a>      
+                                    </td>
+                                </tr>
+                            {% endfor%} 
+                        </tbody>
+
+                </table>    
+            </section>
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

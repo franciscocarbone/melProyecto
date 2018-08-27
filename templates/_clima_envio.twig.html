@@ -1,0 +1,16 @@
+
+{% if mensajeError %}
+    <div class="clear"></div>
+    {% include 'const/mensaje.twig.html' %}
+{% else %}
+    <div class="clima">              
+        <p><strong>Pronóstico del clima: </strong>{{clima.descripcion}} | {{clima.temp |number_format(0, ',', '.') }} ºC</p>
+        <img src="{{clima.url}}" />
+        <p><strong>Ciudad: </strong>{{clima.ciudad}}</p>
+        <p><strong>Máxima: </strong>{{clima.tempMax |number_format(1, ',', '.')}}ºC</p>
+        <p><strong>Mínima: </strong>{{clima.tempMin |number_format(1, ',', '.')}}ºC</p>
+        <p> <strong>Presión: </strong>{{clima.presion |number_format(2, ',', '.')}} hPa</p>
+        <p> <strong>Humedad: </strong>{{clima.humedad |number_format(1, ',', '.') }}%</p>    
+    </div> 
+{% endif %}
+

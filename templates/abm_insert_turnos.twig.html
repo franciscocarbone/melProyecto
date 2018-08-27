@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+    
+                    <!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+                    <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+
+            <div class="formularioAltaPedido">
+                <h1>Formulario de Turnos</h1>
+                
+                <form class="altaPedido" name="altaPedido" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{pedido.numero}}" hidden>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul>  
+                            <li><label for="fecha">Fecha:</label>  
+                            <input type="date" id="fecha" name="fecha"  placeholder="Fecha para el turno"></li>
+
+                            <li><label for="hora">Hora:</label>  
+                            <input type="time" id="hora" name="hora" placeholder="Hora del turno"></li>
+
+                            <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>  
+                        </ul> 
+                    </fieldset>
+                </form>
+
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+    <!--<meta name="menu" value="submenubackend_abm" />
+    <meta submenu="submenu" value="" /> -->
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+
+            {% include 'const/menu_backend.twig.html' %}
+    
+                    <!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+                    <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+
+            <div class="formularioAltaAlimento">
+                <h1>Formulario de Alimentos</h1>
+                <form name="altaAlimento" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{detalle.id}}" hidden></li>
+                    <fieldset>
+                        <legend class="detalle_alimento">{{titulo}}</legend>  
+                        <ul>  
+                            <li><label for="alimento">Alimento:</label>  
+                               <select id="alimento" name="alimento" required>
+                                   {% for alimento in alimentos %}
+                                       {% if alimento.codigo==detalle.alimento_codigo%}
+                                             <option value="{{alimento.codigo}}" selected>{{alimento.descripcion}}</option>
+                                       {% else %}
+                                            <option value="{{alimento.codigo}}">{{alimento.descripcion}}</option>
+                                        {% endif %}
+                                   {% endfor %}
+                               </select>
+                               <a href="backend.php?ctl=listar_alimentos" alt="add alimento"><img class="addAlimento" src="imagenes/add16.png" title="Añadir Alimento"></a>
+                           </li>   
+
+                            <li class="required"><label for="fecha">Fecha de Vencimiento:</label>  
+                            <input type="date" id="fecha" name="fecha" value="{{detalle.fecha_vencimiento}}" required></li> 
+                            <li class="required"><label for="contenido">Contenido:</label>  
+                            <input type="text" id="contenido" name="contenido" value="{{detalle.contenido}}" placeholder="Contenido del Alimento" required></li>
+
+                            <li class="required"><label for="peso">Peso:</label>  
+                            <input type="number" id="peso" name="peso" value="{{detalle.peso_paquete}}" placeholder="Peso del Alimento" required></li>
+
+                            <li><input class="btnAltaAlimento" type="submit" name="btnAltaAlimento" value="Guardar"></li>  
+                        </ul> 
+                    </fieldset>
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

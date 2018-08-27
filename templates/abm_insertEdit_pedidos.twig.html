@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+    
+                    <!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+                    <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+
+            <div class="formularioAltaPedido">
+                <h1>Formulario de Pedidos</h1>
+                
+                <form class="altaPedido" name="altaPedido" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{pedido.numero}}" hidden>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul>  
+                        <li class="required"><label for="fecha">Fecha de Ingreso:</label>  
+                            <input type="date" id="fecha" name="fecha" value="{{pedido.fecha_ingreso}}" required></li>
+
+                            <li><label for="entidad">Entidad Receptora:</label>  
+                           <select id="entidad" name="entidad" required>
+                               {% for entidad in entidades %}
+                                    {% if entidad.id==pedido.entidad_receptora_id %}
+                                        <option value="{{entidad.id}}" selected>{{entidad.razon_social}}</option>
+                                    {% else %}
+                                        <option value="{{entidad.id}}">{{entidad.razon_social}}</option>
+                                    {% endif %}
+                               {% endfor %}
+                           </select></li>
+
+                           <li><label for="estado">Estado del Pedido:</label>  
+                           <select id="estado" name="estado" required>
+                               {% for estado in estados %}
+                                    {% if estado.id==pedido.estado_pedido_id %}
+                                        <option value="{{estado.id}}" selected>{{estado.descripcion}}</option>
+                                    {% else %}
+                                        <option value="{{estado.id}}">{{estado.descripcion}}</option>
+                                    {% endif %}
+                               {% endfor %}
+                           </select></li>
+
+
+                            <li><label for="turno">Turno de Entrega:</label>  
+                               <select id="turno" name="turno" required>
+                                   {% for turno in turnos %}
+                                        {% if turno.id==pedido.turno_entrega_id %}
+                                            <option value="{{turno.id}}" selected>{{turno.fecha}} / {{turno.hora}}</option>
+                                        {% else %}
+                                            <option value="{{turno.id}}">{{turno.fecha}} / {{turno.hora}}</option>
+                                        {% endif %}
+                                   {% endfor %}
+                               </select>
+                               <a href="backend.php?ctl=agregar_turno" alt="add alimento"><img class="addAlimento" src="imagenes/add16.png" title="Añadir Alimento"></a>
+                            </li>
+
+                            <li>
+                                <label for="envio">Envio:</label> 
+                                {% if pedido.envio==1 %} 
+                                    <input type="checkBox" id="envio" name="envio"  checked>
+                                {% else %}
+                                    <input type="checkBox" id="envio" name="envio" >
+                                {% endif %}
+                            </li>
+
+                            <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>  
+                        </ul> 
+                    </fieldset>
+                </form>
+
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+	
+			<div class="clear"></div>
+			{% include 'const/menu_backend.twig.html' %}
+			{% include 'const/mensaje.twig.html' %}
+
+			<div class="clear"></div>
+			{% include 'const/alertas.twig.html' %}    
+			      
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

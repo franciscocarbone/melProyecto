@@ -1,0 +1,9 @@
+{% for detalle in detalles %}  
+    <tr>
+      <td class="contenido"><input class="id_contenido" type="number" value="{{detalle.id}}" hidden>{{detalle.contenido}}</td>
+      <td>{{detalle.descripcion}}</td>
+      <td class="vencimiento">{{detalle.vencimiento}}</td>
+      <td>{{detalle.maximo}}</td>
+      <td><input class="cant" type="number"></td> 
+    </tr> 
+{% endfor %}

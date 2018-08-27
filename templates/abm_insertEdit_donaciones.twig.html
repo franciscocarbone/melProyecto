@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+
+           
+            <div class="formularioAltaDonacion">
+
+                <h1>Formulario de Donaciónes</h1>
+
+                <form class="altaDonacion" name="altaDonacion" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{donacion.id}}" hidden></li>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul>  
+                            <li><label for="donate">Donante:</label>  
+                            <select id="donate" name="donate" required>
+                               {% for donante in donantes %}
+                                  {% if donante.id==donacion.donante_id %}
+                                    <option value="{{donante.id}}" selected>{{donante.razon_social}}</option>
+                                  {% else %}
+                                    <option value="{{donante.id}}">{{donante.razon_social}}</option>
+                                  {% endif %}
+                               {% endfor %}
+                            </select></li>   
+                            <li><input class="btnAltaDonacion" type="submit" value="Guardar"></li>         
+                        </ul> 
+                              
+                    </fieldset>
+                   
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+    <script type="text/javascript"> 
+        $( document ).ready(function() {
+            //Carga por ajax el detalle cuando carga la pagina.
+            cargarDetallesAlimento($("#alimento"));
+        }
+    </script>
+</body> 
+</html> 

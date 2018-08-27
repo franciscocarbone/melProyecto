@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+<body> 
+
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+    
+                    <!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+                    <li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+
+            <div class="formularioAltaPedido">
+                <h1>Formulario de Envio</h1>
+                
+                <form class="altaEnvio" name="altaEnvio" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{envio.numero}}" hidden>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul> 
+
+                           <li><label for="turno">Turno de Entrega:</label>  
+                               <select id="turno" name="turno" required>
+                                   {% for turno in turnos %}
+                                        {% if turno.id==pedido.turno_entrega_id %}
+                                            <option value="{{turno.fecha}}" selected>{{turno.fecha}} / {{turno.hora}}</option>
+                                        {% else %}
+                                            <option value="{{turno.fecha}}">{{turno.fecha}}</option>
+                                        {% endif %}
+                                   {% endfor %}
+                               </select>
+                            </li>
+
+                        </ul> 
+                    </fieldset>
+                </form>
+            </div> 
+            <table class="tablaEnvios">
+                <caption><h1>Puntos de Entrega</h1></caption>
+                <thead>
+                    <tr class="encabezado">                      
+                        <th class="th_entidad">Entidad</th>
+                        <th class="th_fecha">Entrega</th>
+                        <th class="th_hora">Hora</th>
+                        <th class="th_estado">Estado</th>
+                        <th class="th_latitud" hidden>Latitud</th> 
+                        <th class="th_longitud" hidden>Longitud</th>                    
+                    </tr>
+                </thead>
+                <tbody id="envios_del_dia"> 
+                        
+                </tbody>
+            </table> 
+            <div class="clear"></div> 
+            <!--MAPA DE ENVIOS-->
+            <div id="mapa">
+                <input id="latitud" hidden value="{{configuracion.latitud}}">
+                <input id="longitud" hidden value="{{configuracion.longitud}}">
+                <input id="destino_latitud" hidden>
+                <input id="destino_longitud" hidden>
+                <div id="map-canvas"></div>
+            </div>
+            <!--MAPA DE ENVIOS-->
+            <div id="clima_envio">
+            
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+    <script type="text/javascript" src="js/googlemaps.js"></script>
+    
+</body> 
+</html> 

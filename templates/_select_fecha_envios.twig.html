@@ -1,0 +1,12 @@
+{% for envio in envios %}                
+    <tr class="envios">
+        <td class="td_numero" hidden>{{envio.numero}}</td>
+        <td class="td_entidad">{{envio.razon_social}}</td>
+        <td class="td_fecha">{{envio.fecha}}</td>
+        <td class="td_hora">{{envio.hora}}</td>
+        <td class="td_estado">{{envio.descripcion}}</td>
+        <td class="td_latitud" hidden>{{envio.latitud}}</td>
+        <td class="td_longitud" hidden>{{envio.longitud}}</td>
+    </tr>
+{% endfor %}
+

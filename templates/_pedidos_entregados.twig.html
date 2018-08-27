@@ -1,0 +1,30 @@
+<script src="./js/barra.js"></script>
+
+<div id="alimentosVencidos">
+    <table class="tablaAlimentosVencidos">
+        <thead>
+           <tr class="encabezado">
+                <th class="th_alimento">Pedido</th>
+                <th class="th_contenido">Fecha</th>
+                <th class="th_cantidad">Estado</th>
+                <th class="th_cantidad">Kilos</th>
+           </tr>
+        </thead>
+        <tbody>
+            {% for alimento in alimentos %}
+                <tr>
+                    <td class="td_alimento">{{alimento.numero}}</td>
+                    <td class="td_contenido">{{alimento.fecha}}</td>
+                    <td class="td_cantidad">{{alimento.descripcion}}</td>
+                    <td class="td_cantidad">{{alimento.total}}</td>
+                </tr>
+            {% endfor%} 
+        </tbody>
+    </table>
+</div>
+
+<div id="conteiner"></div>
+
+<script>graficoBarra()</script>
+
+<input id="pedidosEntregadosPDF" type="button" value="Exportar a PDF">

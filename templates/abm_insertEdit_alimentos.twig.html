@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+	{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+			<div class="clear"></div>
+			{% include 'const/menu_backend.twig.html' %}
+	
+					<!-- <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+					<li><span><a href="abm_alimentos.php?action=listAdmin" class="color_active">ALIMENTOS</a></span></li> -->
+					
+			<h1>Formulario de Alimentos</h1>
+
+			<div class="formularioAltaAlimento">
+				
+				<form name="altaAlimento" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+					<input type="text" id="id" name="id" value="{{alimento.id}}" hidden>
+					<fieldset>
+						<legend>{{titulo}}</legend>	
+						<ul>  
+				            <li class="required">
+					            <label for="codigo">Codigo:</label>  
+					            <input type="text" id="codigo" name="codigo" value="{{alimento.codigo}}" placeholder="Codigo" required>
+				            </li> 
+
+				            <li class="required">
+					            <label for="descripcion">Descripcion:</label>  
+					            <input type="text" id="descripcion" name="descripcion" value="{{alimento.descripcion}}" placeholder="Descripcion" required>
+				            </li>
+				            <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>  
+				        </ul> 
+					</fieldset>
+				</form>
+
+			</div>	
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

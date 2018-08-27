@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            {% include 'const/mensaje.twig.html' %}
+            
+            <!--    <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+                <li><span><a href="abm_donaciones.php?action=listAdmin" class="color_active">donacionES</a></span></li> -->
+
+            <section >
+                    
+                <input class="btnAgregarAlimento" type="submit" onclick="location.href='backend.php?ctl=alta_donacion'"  value="Agregar donacion" >   
+                <form name="alta_donacion"  method="post" accept-charset="utf-8">
+                        <div class="busqueda">
+                            <label>Buscar</label>
+                            <input class="buscar" type="search" id="descripcion" name="descripcion" >   
+                        </div>
+                </form>
+
+                <div class="clear"></div>
+                <table class="tablaAbmListadodonaciones">
+                    <caption><h1>Registro de Donaciónes</h1></caption>
+                        <thead>
+                           <tr class="encabezado">
+
+                            <th class="th_donante">Donante</th>
+                            <th class="th_fecha">Fecha</th>
+                            <th class="th_botones">Operaciones</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            {% for donacion in donaciones %}
+                                <tr>
+                                    <td class="td_donante">{{donacion.donante_Razon_Social}}</td>
+                                    <td class="td_fecha">{{donacion.fecha}}</td>
+                                    <td class="td_botones"> 
+                                    <a href="backend.php?ctl=agregar_detalles_donacion&id={{donacion.id}}"><img src="imagenes/alimentoPedido20.png" alt="agregar alimentos" title="Agregar Alimentos"></a>
+                                    <a href="backend.php?ctl=editar_donacion&id={{donacion.id}}"><img src="imagenes/Edit16.png" alt="modificar" title="Modificar Donación"></a>
+                                    <a href="backend.php?ctl=eliminar_donacion&id={{donacion.id}}" onclick="return confirm('¿Esta seguro que desea borrar la donación de {{donacion.donante_Razon_Social}}?')"><img src="imagenes/errase24.png" alt="eliminar" title="Eliminar Donación"></a>      
+                                    </td>
+                                </tr>
+                            {% endfor%} 
+                        </tbody>
+
+                </table>    
+            </section>
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

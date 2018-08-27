@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            <!--<li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+            <li><span><a href="abm_entidades.php?action=listAdmin" class="color_active">ENTIDADES</a></span></li> -->
+            <h1>Formulario de Usuarios</h1>
+            <div class="formularioAltaAlimento">
+                <form name="altaEntidad" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{usuario.usuario_id}}" hidden></li>
+                    <fieldset>
+                        <legend>{{titulo}}</legend> 
+                        <ul>  
+                           <li class="required"><label for="nombre">Nomnbre:</label>  
+                           <input type="text" id="nombre" name="nombre" value="{{usuario.nombre}}" placeholder="Nombre del Usuario" required></li> 
+                    
+                           <li class="required"><label for="apellido">Apellido:</label>  
+                           <input type="text" id="apellido" name="apellido" value="{{usuario.apellido}}" placeholder="Apellido del Usuario" required></li> 
+                    
+                           <li class="required"><label for="usuario">Usuario:</label>  
+                           <input type="text" id="usuario" name="usuario" value="{{usuario.usuario}}" placeholder="Usuario" required></li>
+
+                           <li class="required"><label for="password">Password:</label>  
+                           <input type="password" id="password" name="password" value="{{usuario.password}}" placeholder="Password" required></li>
+                    
+                           <li><label for="rol">Rol:</label>  
+                           <select id="rol" name="rol" required>
+                               {% for rol in roles %}
+                                    {% if rol.id==usuario.rol_id %}
+                                        <option value="{{rol.id}}" selected>{{rol.descripcion}}</option>
+                                    {% else %}
+                                        <option value="{{rol.id}}">{{rol.descripcion}}</option>
+                                    {% endif %}
+                               {% endfor %}
+                           </select></li>
+                    
+                           <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>          
+                        </ul> 
+                             
+                    </fieldset>
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

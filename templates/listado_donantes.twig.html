@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+	{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+			
+			<!--<li id="listado"><span class="color_active"><a href=#>LISTADO</a></span></li>
+		
+			<li><span><a href="abm_donantes.php?action=list" class="color_active">DONANTES</a></span></li> -->
+			
+			<section >
+			
+				<form>
+					<div class="busqueda">
+						<label>Buscar</label>
+						<input class="buscar" type="search" id="descripcion" name="descripcion" >	
+					</div>			
+				</form>
+				<div class="clear"></div>
+				<table class="tablaListadoDonantes">
+					<caption><h1>Listado de Donantes</h1></caption>
+					<thead>
+						<tr class="encabezado">
+							<th class="th_razon_soc_don">Razon Social</th>
+							<th class="th_apellido_don">Apellido</th>
+							<th class="th_nombre_don">Nombre</th>
+							<th class="th_domicilio_don">Domicilio</th>
+							<th class="th_telefono_don">Telefono</th>
+							<th class="th_mail_don">Mail</th>      
+						</tr>
+						</thead>
+						<tbody>
+							{% for donante in donantes %}
+								<tr>
+									<td class="th_razon_soc_don">{{donante.razon_social}}</td>
+									<td class="th_apellido_don">{{donante.apellido_contacto}}</td>
+									<td class="th_nombre_don">{{donante.nombre_contacto}}</td>
+									<td class="th_domicilio_don">{{donante.domicilio_contacto}}</td>
+									<td class="th_telefono_don">{{donante.telefono_contacto}}</td>      
+									<td class="th_mail_don">{{donante.mail_contacto}}</td>
+								</tr>
+							{% endfor%}
+						</tbody>
+				</table>	
+			</section>
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

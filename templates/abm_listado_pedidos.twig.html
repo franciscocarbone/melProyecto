@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            {% include 'const/mensaje.twig.html' %}
+
+            <!--    <li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+                <li><span><a href="abm_pedidos.php?action=listAdmin" class="color_active">pedidoS</a></span></li> -->
+            
+            <section >
+                
+                <input class="btnAgregarpedido" type="submit" onclick="location.href='backend.php?ctl=alta_pedido'"  value="Agregar pedido" >
+                <form name="alta_pedido" method="post" accept-charset="utf-8">
+                        <div class="busqueda">
+                            <label>Buscar</label>
+                            <input class="buscar" type="search" id="descripcion" name="descripcion" >   
+                        </div>
+                </form>
+
+                <div class="clear"></div>
+                <table class="tablaAbmListadoPedidos">
+                    <caption><h1>Formulario de pedidos</h1></caption>
+                    <thead>
+                        <tr class="encabezado">                      
+                            <th class="th_entidad">Entidad</th>
+                            <th class="th_numero">Numero</th>
+                            <th class="th_fecha">Ingreso</th>
+                            <th class="th_fecha">Entrega</th>
+                            <th class="th_hora">Hora</th>
+                            <th class="th_estado">Estado</th>
+                            <th class="th_botones">Operaciones</th>                      
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for pedido in pedidos %}
+                            <tr>
+                                <td class="td_entidad">{{pedido.razon_social}}</td>
+                                <td class="td_numero">{{pedido.numero}}</td>
+                                <td class="td_numero">{{pedido.fecha_ingreso}}</td>
+                                <td class="td_codigo">{{pedido.fecha}}</td>
+                                <td class="td_codigo">{{pedido.hora}}</td>
+                                <td class="td_codigo">{{pedido.descripcion}}</td>
+                                <td class="td_botones"> 
+                                    {% if pedido.descripcion != 'ENTREGADO' %}
+                                        <a href="backend.php?ctl=agregar_detalles_pedido&id={{pedido.numero}}"><img src="imagenes/alimentoPedido20.png" alt="agregar alimentos" title="Agregar Alimentos"></a>
+                                        <a href="backend.php?ctl=editar_pedido&id={{pedido.numero}}"><img src="imagenes/Edit16.png" alt="modificar" title="Modificar Pedido"></a>
+                                        <a href="backend.php?ctl=eliminar_pedido&id={{pedido.numero}}" onclick="return confirm('¿Esta seguro que desea borrar el pedido de {{pedido.razon_social}}?')"><img src="imagenes/errase24.png" alt="eliminar" title="Eliminar Pedido"></a>
+                                    {% endif %} 
+                                </td>
+                            </tr>
+                        {% endfor%}
+                        
+                    </tbody>
+                </table>    
+            </section>
+            
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

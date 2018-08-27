@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.php">INICIO</a></li>
+                    <li><a href="index.php?ctl=linked_in" class="color_active">NOSOTROS</a></li>
+                    <li><a>VOLUNTARIADO</a></li>
+                    <li><a href="index.php?ctl=resumen_entidades">AYUDAMOS A</a></li>
+                    <li><a href="index.php?ctl=resumen_donantes">DONANTES</a></li>
+                    <li><a>COLABORADORES</a></li>
+                    <li><a>CONTACTO</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            <div class="usuario"></div> 
+            <div class="clear"></div>      
+                <p>Nombre: {{nombre}}</p>
+                <p>Apellido: {{apellido}}</p>
+                <p>Actividad: {{actividad}}</p>
+                <img src='"{{imagen}}"' alt='imagen de perfil' />  
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

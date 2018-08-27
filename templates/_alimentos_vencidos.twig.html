@@ -1,0 +1,26 @@
+                
+<div id="alimentosVencidos">
+    <table class="tablaAlimentosVencidos">
+        <thead>
+           <tr class="encabezado">
+                <th class="th_alimento">Alimento</th>
+                <th class="th_contenido">Contenido</th>
+                <th class="th_cantidad">Cantidad</th>
+           </tr>
+        </thead>
+        <tbody>
+            {% for alimento in alimentos %}
+                <tr>
+                    <td class="td_alimento">{{alimento.alimento}}</td>
+                    <td class="td_contenido">{{alimento.contenido}}</td>
+                    <td class="td_cantidad">{{alimento.cantidad}}</td>
+                </tr>
+            {% endfor%} 
+        </tbody>
+    </table>
+</div>
+
+<input id="alimentosVencidosPDF" type="button" value="Exportar a PDF">
+
+
+

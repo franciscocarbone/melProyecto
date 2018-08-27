@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+           
+            <div class="formularioAltaItemsPedido">
+                <h1>Formulario de Alimentos Pedidos</h1>
+                <form class="altaItemsPedido" name="altaItemsPedido" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{pedido.numero}}" hidden></li>
+                    <fieldset>
+                        <legend class="items_pedido">{{titulo}}</legend> 
+                        <ul>             
+                          <li><label for="alimento_donado">Alimento:</label>  
+                          <select id="alimento_donado" name="alimento_donado">
+                             {% for alimento in alimentos %} 
+                                <option value="{{alimento.codigo}}">{{alimento.descripcion}}</option>
+                             {% endfor %}
+                          </select>
+                        </ul>              
+                    </fieldset>
+                    <div class="clear"></div>
+                    <table id="tablaAlimentosDonados">
+                      <thead>
+                         <tr class="encabezado">
+                            <th class="th_contenido">Contenido</th>  
+                            <th class="th_alimento">Alimento</th>
+                            <th class="th_vencimiento">Vencimiento</th>
+                            <th class="th_maximo">Máximo</th>
+                            <th class="th_Cantidad">Cantidad</th>
+                         </tr>
+                        </thead>
+                        <tbody id="detalle_donado">
+                            
+                        </tbody>
+                    </table>                                        
+
+                  <li><input id="addDetallePedido" class="btnAgregarAlimento" type="button" value="Agregar alimento"></li>
+                    <div class="clear"></div>   
+
+                    <table id="tablaDetalle">
+                        <thead>
+                           <tr class="encabezado">
+                              <th class="th_contenido">Contenido</th>  
+                              <th class="th_alimento">Alimento</th>
+                              <th class="th_Cantidad">Cantidad</th>
+                              <th class="vencimiento">Vencimiento</th>
+                              <th class="th_botones">Operaciones</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                          <!--CARGO LOS ITEMS SELECCIONADOS-->
+                          {% for detalle in detalles %}
+
+                            <tr id="cant">                
+                                <td><input id="det_id" type="hidden" name="detalle[cant][id_detalle]" value="{{detalle.donacion_detalle_alimento_id}}">{{detalle.contenido}}</td>
+                                <td>{{detalle.descripcion}}</td>
+                                <td><input id="cant" type="hidden" name="detalle[cant][cantidad]" value="{{detalle.cantidad}}">{{detalle.cantidad}}</td>
+                                <td>{{detalle.vencimiento}}</td>
+                                <td><a class="eliminar"><img src="imagenes/eliminar.png" alt="eliminar" title="Eliminar"></a></td>
+                            </tr>
+
+                          {% endfor %}
+                      </tbody>
+                  </table>
+                   <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li> 
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+    <script type="text/javascript"> 
+       //Carga por ajax el detalle cuando carga la pagina.
+       cargarDetallesAlimentoPedidos($("#alimento_donado"));
+    </script>
+</body> 
+</html> 

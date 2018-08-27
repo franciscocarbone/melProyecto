@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            {% include 'const/mensaje.twig.html' %}
+			
+			<!--	<li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+			
+				<li><span><a href="abm_entidades.php?action=listAdmin" class="color_active">ENTIDADES</a></span></li> -->
+		
+			
+			<section >
+					
+				<input class="btnAgregarAlimento" type="submit" onclick="location.href='backend.php?ctl=alta_entidad'"  value="Agregar Entidad" >	
+				<form name="alta_entidad"  method="post" accept-charset="utf-8">
+						<div class="busqueda">
+							<label>Buscar</label>
+							<input class="buscar" type="search" id="descripcion" name="descripcion" >	
+						</div>
+				</form>
+
+				<div class="clear"></div>
+				<table class="tablaAbmListadoEntidades">
+					<caption><h1>Registro de Entidades</h1></caption>
+						<thead>
+						   <tr class="encabezado">
+							<th class="th_razon_social">Razon Social</th>
+							<th class="th_telefono">Telefono</th>
+							<th class="th_domicilio">Domicilio</th>
+							<th class="th_servicio">Servicio Prestado</th>
+							<th class="th_necesidad">Necesidad</th>      
+							<th class="th_estado">Estado</th>
+							<th class="th_botones">Operaciones</th>
+						   </tr>
+						</thead>
+						<tbody>
+							{% for entidad in entidades %}
+								<tr>
+									<td class="td_razon_social">{{entidad.razon_social}}</td>
+									<td class="td_telefono">{{entidad.telefono}}</td>
+									<td class="td_domicilio">{{entidad.domicilio}}</td>
+									<td class="td_servicio">{{entidad.serv_descripcion}}</td>
+									<td class="td_necesidad">{{entidad.nec_descripcion}}</td>
+									<td class="td_estado">{{entidad.est_descripcion}}</td>
+									<td class="td_botones"> 
+									<a href="backend.php?ctl=editar_entidad&id={{entidad.id}}"><img src="imagenes/Edit16.png" alt="modificar" title="Modificar"></a>
+									<a href="backend.php?ctl=eliminar_entidad&id={{entidad.id}}" onclick="return confirm('¿Esta seguro que desea borrar {{entidad.razon_social}}?')"><img src="imagenes/errase24.png" alt="eliminar" title="Eliminar"></a>		
+									</td>
+								</tr>
+							{% endfor%}	
+						</tbody>
+
+				</table>	
+			</section>
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

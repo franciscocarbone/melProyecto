@@ -1,0 +1,64 @@
+#page {
+    padding-top: 60px;
+}
+
+/*----------------------------------*/
+
+.clear{
+  clear:both;
+}
+
+.content_comedor{
+    float: left ; 
+    border: 1px solid #ccc ;
+    padding: 10px 10px 10px 10px ;
+    border-radius: 5px ;
+    background-color: white ;
+    width: 200px !important;
+    height: 200px !important;
+    margin: 30px 10px 20px 15px ;
+}
+
+.img_comedor
+{
+  width: 200px !important;
+  height: 200px !important;
+}
+
+/*  Texto sobre la imagen*/
+.desc_comedor p{
+  position: absolute;
+  font-size: 15px;
+  margin-top: 150px;
+  padding: 10px 0;
+  width: 200px;
+  font-family: "HelveticaNeue";
+  height: 30px;
+  opacity: 0.8;
+  background-color: white;  
+  color: #1E90FF;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clear{
+  clear:both;
+}
+
+#fechas{
+  margin: 28px 0 0 31px; 
+}
+
+#fechas li{
+  list-style: none;
+  margin-right: 80px;
+  display: inline;
+}
+
+#footer{
+  margin-top: 30px;
+  border-radius: 4px;
+  background-color: #eeeeee;;
+  padding: 10px 0 10px 20px;
+}

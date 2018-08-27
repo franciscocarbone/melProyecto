@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+	{% include 'const/head.twig.html' %}
+	<body> 
+		<div class="tope">
+			<header>
+				<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">			
+			</header>
+		</div>
+		<div class="conteiner">
+			
+			<div class="content">
+				
+				<section class="formularioLogin">  
+					<div class="btnClose" ><a href="index.php">Volver</a></div>
+				    <form name="login" action="backend.php?ctl=login" method="post" accept-charset="utf-8">  
+				        <ul>  
+				            <li><label for="usuario">Usuario</label>  
+				            <input type="text" id="usuario" name="usuario" placeholder="Nombre Usuario" required></li>  
+				            <li><label for="password">Password</label>  
+				            <input type="password" id="password" name="password" placeholder="password" required></li>  
+				            <li>  
+				            <input class="btnLogin"  type="submit" value="Login"></li>  
+				        </ul>  
+				    </form>  
+			    </section> 
+			    <div class="clear"></div>
+				{% include 'const/mensaje.twig.html' %}
+			</div>
+			
+		</div>
+		<div class="clear"></div>
+		<footer>
+			
+		</footer>
+	</body> 
+</html> 

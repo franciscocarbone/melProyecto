@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+    {% include 'const/head.twig.html' %}
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+        
+
+            <h4>Seleccione un rango entre fechas para generar el informe</h4>
+            <div id="fechas">     
+                <li>
+                    <label for="desde">Desde:</label>  
+                    <input type="date" id="desde" name="desde"  placeholder="Fecha desde" required>
+                </li> 
+                <li>
+                    <label for="hasta">Hasta:</label>  
+                    <input type="date" id="hasta" name="hasta"  placeholder="Fecha hasta" required>
+                </li> 
+            </div>
+            
+            <div id="submenu">
+                <span id="pedidosEntregados">
+                    PEDIDOS ENTREGADOS
+                </span>|
+                <span id="alimentosEntregados">
+                    ALIMENTOS ENTREGADOS
+                </span>| 
+                <span id="AlimentosVencidos">
+                    ALIMENTOS VENCIDOS
+                </span>      
+            </div>
+            <hr>
+
+            <div class="clear"></div>
+
+            <div id="grafico">
+            </div>   
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

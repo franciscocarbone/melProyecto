@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+{% include 'const/head.twig.html' %}
+
+<body> 
+    <div class="tope">
+
+        <header>
+            <img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+        </header>
+
+    </div>
+
+    <div class="conteiner">
+        
+        <div class="content">
+            {% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+            <!--<li id="abms"><span class="color_active"><a href=#>ABMS</a></span></li>
+            
+            <li><span><a href="abm_entidades.php?action=listAdmin" class="color_active">ENTIDADES</a></span></li> -->
+            <h1>Formulario de Configuraciónes</h1>
+            <div class="formularioAltaAlimento">
+                <form name="altaConfiguracion" action="backend.php?ctl={{accion}}" method="POST" accept-charset="utf-8">
+                    <input type="text" id="id" name="id" value="{{configuracion.usuario_id}}" hidden></li>
+                    <fieldset>
+                        <legend class="detalle_alimento">{{titulo}}</legend> 
+                        <ul>  
+                           <li class="required"><label for="latitud">Latitud:</label>  
+                           <input type="text" id="latitud" name="latitud" value="{{configuracion.latitud}}" placeholder="Latitud del Banco" required></li> 
+                    
+                           <li class="required"><label for="longitud">Longitud:</label>  
+                           <input type="text" id="longitud" name="longitud" value="{{configuracion.longitud}}" placeholder="Longitud del Banco" required></li> 
+                    
+                           <li class="required"><label for="vencimiento">Vencimiento Mínimo:</label>  
+                           <input type="number" id="vencimiento" name="vencimiento" value="{{configuracion.vencimiento_stock}}" placeholder="Días para Vencimiento" required></li>
+
+                           <li class="required"><label for="api">Clave API LinkedIn:</label>  
+                           <input type="text" id="api" name="api" value="{{configuracion.clave_api}}" placeholder="Clave API Linkedin" required></li>
+
+                           <li class="required"><label for="clave">Clave Secreta LinkedIn:</label>  
+                           <input type="text" id="clave" name="clave" value="{{configuracion.clave_secreta}}" placeholder="Clave Secreta Linkedin" required></li>
+
+                           <li class="required"><label for="credencial">Credencial Usuario LinkedIn:</label>  
+                           <input type="text" id="credencial" name="credencial" value="{{configuracion.credencial_usuario}}" placeholder="Credencial Usuario" required></li>
+
+                           <li class="required"><label for="secreto">Secreto Usuario LinkedIn:</label>  
+                           <input type="text" id="secreto" name="secreto" value="{{configuracion.secreto_usuario}}" placeholder="Secreto Usuario" required></li>
+                    
+                    
+                           <li><input class="btnAltaAlimento" type="submit" value="Guardar"></li>          
+                        </ul> 
+                             
+                    </fieldset>
+                </form>
+            </div>  
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    {% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 

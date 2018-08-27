@@ -1,0 +1,51 @@
+{% if alertaVencimientos %}
+    <table class="tablaAlertasVencimientos">
+        <caption>ALIMENTOS POR VENCER</caption>
+            <thead>
+               <tr class="encabezado">
+                <th class="th_detalle_alimento">Detalle Alimento</th>
+                <th class="th_alimento">Alimento</th>
+                <th class="th_cantidad">Cantidad</th>      
+                <th class="th_vencimiento">Vencimiento</th>
+               </tr>
+            </thead>
+            <tbody>
+                {% for vencimiento in alertaVencimientos %}
+                    <tr>
+                        <td class="td_detalle_alimento">{{vencimiento.contenido}}</td>
+                        <td class="td_alimento">{{vencimiento.alimento}}</td>
+                        <td class="td_cantidad">{{vencimiento.cantidad}}</td>
+                        <td class="td_vencimiento">{{vencimiento.vencimiento}}</td>                            
+                    </tr>
+                {% endfor%} 
+            </tbody>
+    </table>   
+{% endif %} 
+
+
+{% if alertaEnvios %}
+    <table class="tablaAlertasEnvios">
+        <caption>ENVIOS DEL DÍA</caption>
+            <thead>
+               <tr class="encabezado">
+                <th class="th_detalle_alimento">Entidad Receptora</th>
+                <th class="th_estado">Estado</th>
+                <th class="th_fecha">Fecha</th>      
+                <th class="th_hora">Hora</th>
+                <th class="th_envio">Nro Pedido</th>
+               </tr>
+            </thead>
+            <tbody>
+                {% for envio in alertaEnvios %}
+                   
+                    <tr class="envio">
+                        <td class="td_entidad_receptora">{{envio.razon_social}}</td>
+                        <td class="td_estado">{{envio.descripcion}}</td>
+                        <td class="td_fecha_envio">{{envio.fecha}}</td>
+                        <td class="td_hora_envio">{{envio.hora}}</td> 
+                        <td class="td_numero">{{envio.numero}}</td>            
+                    </tr>
+                {% endfor%} 
+            </tbody>
+    </table>   
+{% endif %}

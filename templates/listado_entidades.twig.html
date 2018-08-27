@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"> 
+	{% include 'const/head.twig.html' %} 
+<body> 
+	<div class="tope">
+
+		<header>
+			<img src="imagenes/logo_web3.jpg" alt="logo Banco Alimentario La Plata">
+		</header>
+
+	</div>
+
+	<div class="conteiner">
+		
+		<div class="content">
+
+			{% include 'const/log_usuario.twig.html' %}
+            <div class="clear"></div>
+            {% include 'const/menu_backend.twig.html' %}
+
+			<!--<li id="listado"><span class="color_active"><a href=#>LISTADO</a></span></li>
+		
+			<li><span><a href="abm_entidades.php?action=list" class="color_active">ENTIDADES</a></span></li> -->
+			
+			<section >	
+		
+				<form>
+					<div class="busqueda">
+						<label>Buscar</label>
+						<input class="buscar" type="search" id="descripcion" name="descripcion" >	
+					</div>			
+				</form>
+				<div class="clear"></div>
+				<table class="tablaListadoEntidades">
+					<caption><h1>Listado de Entidades</h1></caption>
+					<thead>
+						<tr class="encabezado">
+							<th class="th_descripcion">Descripcion</th>
+							<th class="th_fecha">Fecha de Venc</th>
+							<th class="th_contenido">Contenido</th>
+							<th class="th_peso">Peso</th>
+							<th class="th_stock">Stock</th>      
+							<th class="th_reservado">Reservado</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entidad in entidades %}
+								<tr>
+									<td class="th_razon_social">{{entidad.razon_social}}</td>
+									<td class="th_telefono">{{entidad.telefono}}</td>
+									<td class="th_domicilio">{{entidad.domicilio}}</td>
+									<td class="th_servicio">{{entidad.servicio_prestado_id}}</td>
+									<td class="th_necesidad">{{entidad.necesidad_entidad_id}}</td>
+									<td class="th_estado">{{entidad.estado_entidad_id}}</td>
+								</tr>
+						{% endfor%}
+					</tbody>
+				</table>	
+			</section>
+
+		</div>
+
+	</div>
+	<div class="clear"></div>
+	{% include 'const/footer_backend.twig.html' %}
+</body> 
+</html> 
