@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>DOM Sencillo</TITLE>
+	<script>
+	function agregoLista(){
+		var item
+		var lista=document.createElement("ul")
+		item=document.createElement("li")
+		lista.appendChild(item)
+		item=document.createElement("li")
+		lista.appendChild(item)
+		document.getElementById("p1").appendChild(lista)		
+}
+	</script>
+
+</HEAD>
+<BODY LANG="es-AR" DIR="LTR">
+<P id="p1">Ahora va  <span> a aparecer </span> una lista </P>
+<input type="button" value="que aparezca la lista" onclick="agregoLista()">
+
+</BODY>
+</HTML>

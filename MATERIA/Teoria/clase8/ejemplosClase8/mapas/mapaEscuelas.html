@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Mostrando lugares en el mapa</title>
+</head>
+<body>
+<div id="mapa" style="height:750px"></div>
+
+<script src="OpenLayers.js"></script>
+<script>
+    
+    var zoom  = 13;
+	
+	
+    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+    var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+ 
+	function Escuela(nombre, lat, lon, tipo){
+         this.nombre=nombre;
+         this.dire=new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+         this.tipo= tipo;
+         return this;
+    }
+    
+     function crearMarcador(escuela) {
+          var iconoEscuela = new OpenLayers.Icon("escuela.png");
+          var iconoFacu = new OpenLayers.Icon("linux.png");
+          iconoEscuela.size.w *=2;
+          iconoEscuela.size.h *=2;
+
+		  iconoFacu.size.w *=2;
+          iconoFacu.size.h *=2;
+          
+          
+          var lugar=  escuela.dire;
+          if (escuela.tipo=="E")
+			icono=iconoEscuela;
+	    	else
+	    		icono=iconoFacu;
+
+          var marcador = new OpenLayers.Marker(lugar, icono);
+
+          return marcador;
+       }
+
+
+   
+    
+    
+    map = new OpenLayers.Map("mapa", { controls: [] });
+		
+		map.addControl(new OpenLayers.Control.PanZoomBar());
+		map.addControl(new OpenLayers.Control.LayerSwitcher({}));
+		map.addControl(new OpenLayers.Control.OverviewMap());
+		
+    var mapnik         = new OpenLayers.Layer.OSM();
+    map.addLayer(mapnik);
+ 
+    var markers = new OpenLayers.Layer.Markers( "Marcadores" );
+
+    map.addLayer(markers);
+    
+    var escuelas=new Array();
+    escuelas[0]= new Escuela("Normal 1", -34.921986,-57.957281, "E");
+    escuelas[1]= new Escuela("Liceo", -34.910019,-57.950073, "E");
+    escuelas[2]= new Escuela("Facultad Informática",-34.903372,-57.937843, "F");
+    for(var i = 0; i <3; i++) {
+			markers.addMarker(crearMarcador(escuelas[i]));
+                    
+      }
+      
+   var position=escuelas[2].dire;
+    map.setCenter(position, zoom);
+</script>
+</body>
+</html>

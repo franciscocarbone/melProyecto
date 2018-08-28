@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Uno, dos, tres... probando..</title>
+<script src="jquery.js"></script>
+
+<script>
+
+	function Oculto(){
+		$("ul li:odd").hide()
+	}
+	function Restauro(){
+		$("ul li:odd").show()
+	}
+			
+</script>
+</head>
+
+<body>
+	<h1> Ejemplo sencillo con JQuery</h1>
+	<ul><li> uno</li><li> dos</li><li> tres</li><li> cuatro</li><li> cinco</li>
+	</ul>
+	<ul><li> uno</li><li> dos</li><li> tres</li><li> cuatro</li><li> cinco</li>
+	</ul><ul><li> uno</li><li> dos</li><li> tres</li><li> cuatro</li><li> cinco</li>
+	</ul><ul><li> uno</li><li> dos</li><li> tres</li><li> cuatro</li><li> cinco</li>
+	</ul>
+	
+	<img src="lihuen.jpg" alt="Logo Lihuen">
+		
+	<input type="button" value="Que desaparezca....." onclick="Oculto()"/><br/> 
+	<input type="button" value="Que aparezca ....." onclick="Restauro()"/><br/> 
+
+</body>
+</html>

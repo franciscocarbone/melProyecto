@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Primera Aplicacion AJAX</title>
+<meta charset="UTF-8">
+<script>
+
+var url = "retornoTexto.txt"; 
+
+function handleHttpResponse() {
+ if (http.readyState == 4) 
+ {
+	document.getElementById('city').value =http.responseText
+ }
+ else 
+ { document.getElementById('city').value="aun nada"
+ }
+}
+
+function actualizoCiudad() {
+ var zipValue = document.getElementById("zip").value; 
+
+ http.open("GET", url, true);  
+ http.onreadystatechange = handleHttpResponse; 
+ http.send(null);
+}
+
+
+function getHTTPObject() {
+ var xmlhttp;
+
+ if (window.ActiveXObject)
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")
+  }
+ else
+  if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest()
+  }
+  
+ return xmlhttp;
+}
+
+var http = getHTTPObject(); 
+</script>
+</head>
+
+<body>
+<h3>Ejemplo de uso de Ajax con texto a MANO</h3>
+<form action="post">
+  <label for ="zip">
+  Código Postal:
+  </label>
+  <input type="text" size="5" name="zip" id="zip" onblur="actualizoCiudad();" />
+  <label for="city">
+  Ciudad:</label>
+  <input type="text" name="city" id="city" />
+  
+</form>
+</body>
+</html>

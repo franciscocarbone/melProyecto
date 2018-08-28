@@ -1,0 +1,32 @@
+<doctype html>
+<html>
+<body><h1>Usando Objetos JSON</h1>
+<script>
+var librosJSON= { "libros": [
+	{
+	"titulo": "PHP for dummies",
+	"precio":"30",
+	"autor":"Autor desconocido",
+	"paginas":"10"}, 
+	{
+	"titulo": "ASP for dummies",
+	"precio":"35.90",
+	"autor":"Otro desconocido",
+	"paginas":"1000"}]
+	}
+</script>
+<ul id="lista">
+<script>
+var lib
+for (lib in librosJSON.libros){
+	var item
+	var lista=document.getElementById("lista")
+	item=document.createElement("li")
+	item.appendChild(document.createTextNode(librosJSON.libros[lib].titulo))
+	lista.appendChild(item)
+	alert(librosJSON.libros[lib].titulo)
+}
+</script>
+</ul>
+</body>
+</html>

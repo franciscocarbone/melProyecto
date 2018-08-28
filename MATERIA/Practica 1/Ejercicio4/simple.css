@@ -1,0 +1,21 @@
+
+h1, h2 {
+	color: red;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.objetivo{
+	text-align: center;
+	color: grey;
+	font-style: italic;	
+}
+
+p .ejercicio{
+	font-weight: bold;	
+	color: #111111;
+}
+
+ p{
+	color: dimgray; 
+}

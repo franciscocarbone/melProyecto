@@ -1,0 +1,38 @@
+<doctype html>
+<html>
+<body><h1>Usando Objetos JS</h1>
+<script>
+function Libro(titulo, precio, autor, paginas){
+	this.titulo=titulo;
+	this.precio=precio;
+	this.autor=autor;
+	this.paginas=paginas;
+		}
+
+var libros= new Array();
+libros[0]= new Libro(
+	"PHP for dummies",
+	30,
+	"Autor desconocido",
+	10);
+libros[1]= new Libro(
+	"ASP for dummies",
+	35.90,
+	"Otro desconocido",
+	1000);
+</script>
+<ul id="lista">
+<script>
+var lib
+for (lib in libros){
+	var item
+	var lista=document.getElementById("lista")
+	item=document.createElement("li")
+	item.appendChild(document.createTextNode(libros[lib].autor))
+	lista.appendChild(item)
+}
+</script>
+</ul>
+
+</body>
+</html>

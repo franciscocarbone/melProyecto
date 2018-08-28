@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Uno, dos, tres... probando..</title>
+<script src="jquery.js"></script>
+
+<script>
+
+	function Oculto(){
+		$("#p1").hide()
+	}
+	function Restauro(){
+		$("#p1").show()
+	}
+			
+</script>
+</head>
+
+<body>
+	<div id="p1">
+		<h1> Ejemplo sencillo con JQuery</h1>
+		<p>Este es el primer p&aacute;rrafo</p>
+		<img src="lihuen.jpg" alt="Logo Lihuen">
+	</div>
+	
+	<input type="button" value="Que desaparezca....." onclick="Oculto()"/><br/> 
+	<input type="button" value="Que aparezca ....." onclick="Restauro()"/><br/> 
+
+</body>
+</html>

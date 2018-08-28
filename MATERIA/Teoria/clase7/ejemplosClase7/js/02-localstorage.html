@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="estilos.css" type="text/css" />
+  <meta name="Generator" content="Vim :D">
+  <meta name="Author" content="Juan Perez">
+ <title>LocalStorage - Mi primer Script</title>
+  <LINK rel="next" href="html5.html">
+
+ <!-- Le styles -->
+ <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+ <link href="bootstrap/css/docs.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+ </style>
+ <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+
+
+<script>
+function limpiar(){ 
+	localStorage.pagecount=0;
+	}
+</script>
+</head>
+<body>
+
+  <header id="header">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Este es un ejemplo de localStorage de HTML5! </a>
+          </div>
+        </div>
+      </div>
+  </header>
+
+
+    <div class="container">
+      <div class="row">
+            <div class="page-header">
+                <h1>Mi primer script con LocalStorage</h1>
+            </div>
+            <h3>
+		
+		<script type="text/javascript">
+
+			if (localStorage.pagecount)
+			{
+			localStorage.pagecount=Number(localStorage.pagecount) +1;
+			}
+		else
+			{
+			localStorage.pagecount=1;
+			}
+		document.write("Visitas: " + localStorage.pagecount + " vez(ces).");
+
+		</script> 
+</h3>
+<p>Refresca la página y vas a ver que se incrementa el contador.</p>
+
+<p>Cerra la página y vas a ver que el contador continua.</p>
+		
+		
+		<p><input type="button" value="Ctrl+Alt+Del" onclick="limpiar()"></p>
+
+        <ul class="unstyled">
+              <li>Jugando con el localStorage </li>
+              <li>Como siempre para mas info visita <a href="http://www.w3schools.com/html5/html5_webstorage.asp">la W3C school</a></li>
+        </ul>
+      </div>
+    </div><!-- /container -->
+            
+<footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Arriba</a></p>
+        <p>Ejemplo de Hola Mundo! Javascript y evento onclick de botón </p>
+        <p><a href="http://www.info.unlp.edu.ar" target="_blank">Facultad de Inform&aacute;tica </a>- UNLP</p>
+      </div>
+</footer>
+
+
+</body>
+</html>

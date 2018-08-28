@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>DOM Sencillo</TITLE>
+	<script>
+	function agrego() {
+document.getElementById("p1").firstChild.nodeValue =
+  "<ul><li>Uno</li><li>Dos</li></ul>"
+}
+function agregoInner() {
+document.getElementById("p1").innerHTML =
+  "<ul><li>Uno</li><li>Dos</li></ul>"
+}
+</script>
+
+</HEAD>
+<BODY LANG="es-AR" DIR="LTR">
+<P id="p1">Ahora va  a aparecer una lista </P>
+<input type="button" value="que aparezca la lista" onclick="agregoInner()">
+</BODY>
+</HTML>

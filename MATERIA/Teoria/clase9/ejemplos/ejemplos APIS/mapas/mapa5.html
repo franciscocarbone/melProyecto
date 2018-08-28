@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps JavaScript API Example: Map Markers</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+     function Escuela(nombre, lugar1, lugar2, imagen){
+         this.nombre=nombre
+         this.dire=new GLatLng(lugar1, lugar2);
+         this.icono=imagen
+          return this
+    }
+     function crearMarcador(escuela, index) {
+          // Create a lettered icon for this point using our icon class
+          var letter = String.fromCharCode("A".charCodeAt(0) + index);
+          
+        var baseIcon = new GIcon(G_DEFAULT_ICON);
+       // baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+        baseIcon.iconSize = new GSize(20, 34);
+        //baseIcon.shadowSize = new GSize(37, 34);
+        baseIcon.iconAnchor = new GPoint(9, 34);
+        baseIcon.infoWindowAnchor = new GPoint(9, 2);
+
+          var letteredIcon = new GIcon(baseIcon);
+         // letteredIcon.image ="beachflag.png";
+                 letteredIcon.image =escuela.icono;
+
+
+          // Set up our GMarkerOptions object
+          markerOptions = { icon:letteredIcon };
+          point=escuela.dire
+          var marker = new GMarker(point, markerOptions);
+
+          GEvent.addListener(marker, "click", function() {
+          marker.openInfoWindowHtml(escuela.nombre);
+          });
+          return marker;
+        }
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+		centro = new google.maps.LatLng(-34.914998,-57.948164)
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"))
+
+        map.setCenter(centro, 10);
+        //map.setMapTypeId(google.maps.MapTypeId.SATELLITE)
+        
+        
+        var mapTypeControl = new GMapTypeControl();
+        var topRight = new GControlPosition(G_ANCHOR_TOP_RIGHT, new GSize(10,10));
+        var bottomRight = new GControlPosition(G_ANCHOR_BOTTOM_RIGHT, new GSize(10,10));
+        map.addControl(mapTypeControl, topRight);
+        GEvent.addListener(map, "dblclick", function() {
+          map.removeControl(mapTypeControl);
+          map.addControl(new GMapTypeControl(), bottomRight);
+        });
+        map.addControl(new GSmallMapControl());
+     
+       
+        var escuela=new Array()
+      escuela[0]= new Escuela("Normal 1", -34.921986,-57.957281, "beachflag.png");
+        escuela[1]= new Escuela("Liceo", -34.910019,-57.950073, "imagen.png");
+        escuela[2]= new Escuela("EET2", -34.868129,-57.880679, "beachflag.png");
+        escuela[3]= new Escuela("EET1",-34.924705,-57.90375, "beachflag.png");
+        escuela[4]= new Escuela("EEM2", -34.815519,-57.976491, "imagen.png");
+        escuela[5]= new Escuela("EET9",-34.906476,-57.947524, "beachflag.png");
+        escuela[6]= new Escuela("EET4",-34.785888,-58.243014, "beachflag.png");
+        escuela[7]= new Escuela("EEM35",-34.769069,-58.249304, "beachflag.png");
+        escuela[8]= new Escuela("EEM10",-34.779503,-58.231537, "beachflag.png");
+        escuela[9]= new Escuela("facultad Cs Economicas",-34.912635,-57.950528, "beachflag.png");
+   
+        for(var i = 0; i <10; i++) {
+              map.addOverlay(crearMarcador(escuela[i], i));              
+        }
+
+      }
+    }
+
+    </script>
+  </head>
+
+  <body onload="initialize()" onunload="GUnload()">
+    <div id="map_canvas" style="width:500px; height:500px"></div>
+  </body>
+</html>
+

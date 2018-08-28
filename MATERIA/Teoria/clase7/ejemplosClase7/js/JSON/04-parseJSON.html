@@ -1,0 +1,32 @@
+<doctype html>
+<html>
+<body><h1>Usando el menu JSON</h1>
+<ul id="lista">
+<script>
+var menuJSON = '{"menu": {'+
+  '"id": "file",'+
+  '"value": "File",'+
+  '"popup": {'+
+    '"menuitem": ['+
+      '{"value": "New", "onclick": "CreateNewDoc()"},'+
+     ' {"value": "Open", "onclick": "OpenDoc()"},'+
+      '{"value": "Close", "onclick": "CloseDoc()"}'+
+    ']}}}'
+
+var objeto=JSON.parse(menuJSON)
+
+
+
+lista=document.getElementById("lista")
+item=document.createElement("li")
+item.appendChild(document.createTextNode(objeto.menu.id))
+lista.appendChild(item)
+item=document.createElement("li")
+item.appendChild(document.createTextNode(objeto.menu.popup.menuitem[0].value))
+lista.appendChild(item)
+
+
+</script>
+</ul>
+</body>
+</html>

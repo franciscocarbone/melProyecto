@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE ficha [
+<!ELEMENT  ficha (nombre+, lugar+, estadioprincipal?)>
+<!ELEMENT  nombre (#PCDATA)>
+<!ELEMENT  lugar (#PCDATA)>
+<!ELEMENT  estadioprincipal EMPTY>
+]>
+<ficha>
+	<nombre>Roland Garros</nombre>
+	<estadioprincipal archivo="estadio.jpeg"/>
+</ficha>

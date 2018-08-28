@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "­//W3C//DTD XHTML 1.1//EN"  
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<title>Encuesta Inicial</title> 
+	<meta http-equiv="content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-width: 400px)" >
+	<link href="tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 401px) and (max-width: 800px)" >
+</head> 
+<body> 
+
+	<div class="conteiner">
+		<h2>Encuesta Inicial</h2>
+
+		<div class="content generalbox">
+			<div class="generalbox">
+				<div class="continue">
+					<input type="submit" value="Continuar">
+				</div>
+				En este formulario hay campos obligatorios obligatorio
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				.
+			</div>
+
+			<div class="generalbox">
+				<strong>Ambiente de trabajo</strong>
+			</div>
+
+			<div class="generalbox">
+				¿Desde dónde accedés a Internet? (mayormente)
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Hogar
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Facultad
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Trabajo
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Otros
+							</span>
+						</li>
+
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Qué sistema operativo utilizás?
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								windows 7
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Windows 8
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Linux
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Otro
+							</span>
+						</li>
+
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				<u id="conocimientosTitulo">Sobre los conocimientos previos</u>
+			</div>
+
+			<div class="generalbox">
+				¿Escribiste Código HTML?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="editor" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="editor">
+							</span>
+							<span>
+								Si, codifiqué directamente en HTML
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="editor">
+							</span>
+							<span>
+								Si, usé un editor WYSIWYG
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="editor">
+							</span>
+							<span>
+								NO
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Publicaste alguna vez una página en un servidor?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Nunca
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Si, usé FTP
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Si, usé un webdav
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="checkbox">
+							</span>
+							<span>
+								Si, usé otro mecanismo
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Escribiste alguna vez hojas de estilo?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="estilo" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="estilo">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="estilo">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="estilo">
+							</span>
+							<span>
+								No se qué son las hojas de estilo
+							</span>
+						</li>
+
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Usaste XML en algún desarrollo?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="xml" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="xml">
+							</span>
+							<span>
+								Como base de datos
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="xml">
+							</span>
+							<span>
+								Como intercambio de datos
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="xml">
+							</span>
+							<span>
+								Nunca usé
+							</span>
+						</li>
+
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Conocés las pautas WAI sobre accesibilidad web?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="wai" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="wai">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="wai">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Programaste alguna aplicación usando MVC?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="mvc" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="mvc">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="mvc">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Dónde? (o en qué materia)
+				<div>
+					<textarea>
+					</textarea>
+				</div>	
+			</div>
+
+			<div class="generalbox">
+				¿Conocés aspectos de seguridad que afecten al desarrollador de aplicaciones web?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="seguridad" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="seguridad">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="seguridad">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				Mencioná al menos un par de ataques o vulnerabilidades que conozcas:
+				<div>
+					<textarea>
+					</textarea>
+				</div>	
+			</div>
+
+			<div class="generalbox">
+				¿Usaste algún sistema de control de versiones?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="versiones" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="versiones">
+							</span>
+							<span>
+								Subversion
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="versiones">
+							</span>
+							<span>
+								Git
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="versiones">
+							</span>
+							<span>
+								Otro
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="versiones">
+							</span>
+							<span>
+								No se que es
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+
+			<div class="generalbox">
+				¿Instalaste un servidor web?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="servidor" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="servidor">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="servidor">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Cuál?
+				<div>
+					<input>
+				</div>	
+			</div>	
+
+			<div class="generalbox">
+				¿Programaste en PHP?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="php" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="php">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="php">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Qué tipo de aplicación desarrollaste?
+				<div>
+					<textarea>
+					</textarea>
+				</div>	
+			</div>
+
+			<div class="generalbox">
+				¿Utilizo algún framework de desarrollo alguna vez?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li class="frame">
+							<span>
+								<input type="radio" name="framework" checked="check">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li class="frame">
+							<span>
+								<input type="radio" name="framework">
+							</span>
+							<span>
+								No
+							</span>
+						</li> 
+					</ul>
+				</fieldset>
+			</div>
+
+
+			<div class="generalbox">
+				¿Qué Framework utilizó?
+				<div>
+					<textarea>
+					</textarea>
+				</div>	
+			</div>
+
+
+			<div class="generalbox">
+				<u >Sobre tu situación</u>
+			</div>
+
+			<div class="generalbox">
+				¿Trabajás?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="trabajo" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="trabajo">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="trabajo">
+							</span>
+							<span>
+								No
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+
+			<div class="generalbox">
+				¿Cuántas horas semanales?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="horas" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="horas">
+							</span>
+							<span>
+								Menos de 10
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="horas">
+							</span>
+							<span>
+								Entre 10 y 20
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="horas">
+							</span>
+							<span>
+								Entre 20 y 40
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="horas">
+							</span>
+							<span>
+								Más de 40 
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+
+
+			<div class="generalbox">
+				¿Cuántas materias hacés en simultáneo con Proyecto de Software?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="materias" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="materias">
+							</span>
+							<span>
+								0
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="materias">
+							</span>
+							<span>
+								1
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="materias">
+							</span>
+							<span>
+								2
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="materias">
+							</span>
+							<span>
+								3 
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="materias">
+							</span>
+							<span>
+								Más 
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			
+
+			<div class="generalbox">
+				Si recursás, ¿en qué año cursaste previamente?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="recursar" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								No recurso
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								2013
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								2012
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								2011 
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								2010 
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="recursar">
+							</span>
+							<span>
+								Más 
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Tenés los finales de todas las correlativas aprobados?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="correlativas" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="correlativas">
+							</span>
+							<span>
+								Si
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="correlativas">
+							</span>
+							<span>
+								No
+							</span>
+						</li>correlativas
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				¿Cuántos finales te faltan dar?
+				<img alt="Campo obligatorio" src="https://catedras.info.unlp.edu.ar/theme/image.php/catedras/core/1406078154/req" class="req" id="yui_3_13_0_2_1409094728742_33">
+				<fieldset>
+					<ul>
+						<li>
+							<span>
+								<input type="radio" name="finales" checked="check">
+							</span>
+							<span>
+								No seleccionada
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Ninguno
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Entre 1 y 3
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Entre 4 y 7
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Entre 7 y 10 
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Entre 10 y 15
+							</span>
+						</li>
+						<li>
+							<span>
+								<input type="radio" name="finales">
+							</span>
+							<span>
+								Entre 1 y 3
+							</span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+
+			<div class="generalbox">
+				<div class="continue">
+					<input type="submit" value="Continuar">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body> 
+</html> 

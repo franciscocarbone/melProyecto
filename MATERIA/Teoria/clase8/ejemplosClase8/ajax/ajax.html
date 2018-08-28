@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Mi Primer Aplicacion AJAX a mano</title>
+<meta charset="UTF-8">
+<script>
+
+var url = "retornoCP.php?CP="; 
+
+function handleHttpResponse() {
+ if (http.readyState == 4) 
+ {
+	document.getElementById('ciudad').value =http.responseText
+ }
+}
+
+
+function actualizoCiudad() {
+ var codigo = document.getElementById("CP").value; 
+
+ http.open("GET", url + escape(codigo), true); 
+ http.onreadystatechange = handleHttpResponse; 
+ http.send(null);
+
+}
+
+
+function getHTTPObject() {
+ var xmlhttp;
+
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+  
+	return xmlhttp;
+}
+
+var http = getHTTPObject(); 
+</script>
+</head>
+
+<body>
+<h1> El primer ejemplo de Ajax</h1>
+<form >
+  <label for ="cp">
+  Código Postal:
+  </label>
+  <input type="text" size="5" name="CP" id="CP" onblur="actualizoCiudad();" />
+  <label for="ciudad">
+  Ciudad:</label>
+  <input type="text" name="ciudad" id="ciudad" />
+</form>
+</body>
+</html>

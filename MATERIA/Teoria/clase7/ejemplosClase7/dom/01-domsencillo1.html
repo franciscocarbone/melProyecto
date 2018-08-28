@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>DOM Sencillo</TITLE>
+	<script>
+	function agregoLista(){
+		var item
+		var lista=document.createElement("ul")
+		item=document.createElement("li")
+		item.appendChild(document.createTextNode("Uno"))
+		lista.appendChild(item)
+		item=document.createElement("li")
+		item.appendChild(document.createTextNode("Dos"))
+		lista.appendChild(item)
+		document.getElementById("p1").appendChild(lista)		
+}
+function modificoParrafo(){
+		document.getElementById("p1").firstChild.nodeValue="Ya te cambie!!!!!!! :) "
+	}
+	</script>
+
+</HEAD>
+<BODY LANG="es-AR" DIR="LTR">
+<P id="p1">Ahora va  a aparecer una lista </P>
+<input type="button" value="que aparezca la lista" onclick="agregoLista()">
+<p id="p2"> Ahora vamos a cambiar los items generados </p>
+<input type="button" value="Cambiamos algunos textos" onclick="modificoParrafo()">
+
+</BODY>
+</HTML>

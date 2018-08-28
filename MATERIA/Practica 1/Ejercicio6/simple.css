@@ -1,0 +1,46 @@
+.header{
+	background-color: red;	
+	height: 50px;
+}
+
+.barra{
+	background-color:grey;
+	height: 50px;
+}
+
+.container{
+
+	height: 480px;
+}
+
+.menu{
+	background-color: yellow;
+	width: 30%;
+	float: left;
+	height: 480px;
+}
+
+.menu h1{
+	text-align: left;
+}
+
+.content{
+	background-color: orange;
+	min-width: 70%;
+	float: left;
+	height: 480px;
+}
+
+.footer{
+	background-color: green;
+	height: 50px;
+}
+
+.clear{
+	clear:both;
+}
+
+h1{
+	margin: 0px;
+	text-align: center;
+}

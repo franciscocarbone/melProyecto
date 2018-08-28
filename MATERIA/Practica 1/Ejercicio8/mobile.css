@@ -1,0 +1,41 @@
+body{
+	font: 13px/1.231 arial,helvetica,clean,sans-serif;
+}
+
+fieldset{
+	border: 0;
+}
+
+.conteiner{
+	
+	text-align: center;
+}
+
+.content{
+	width: 80%;
+	
+	
+}
+
+.generalbox{
+	border: 1px solid;
+	border-color: #ddd;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.generalbox li {
+	list-style: none;
+	display: block;
+	margin-right: 20px;
+}
+
+#conocimientosTitulo{
+	font-size: 19px;
+	font-weight: bolder
+}
+
+.clear{
+	clear:both;
+}
+

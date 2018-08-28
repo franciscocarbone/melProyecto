@@ -1,0 +1,29 @@
+
+.conteiner{
+	
+	text-align: center;
+}
+
+.clear{
+	clear:both;
+}
+
+
+@media only screen and (max-width:360px) {
+	img{
+		width: 200px;
+	}
+}
+
+
+@media screen and (min-width:361px) and (max-width:768px) {
+	img{
+		width: 450px;
+	}
+}
+
+
+@media screen and (min-width:769px) {
+
+}
+

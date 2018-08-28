@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+</head>
+<body>
+  <p> Si cliquean en este p&aacute;rrafo van a ver c&oacute;mo desaparece</p>
+  <p> Este p&aacute;rrafo permanece intacto</p>
+<script>
+$("p:first").click(function () {
+$(this).fadeTo("slow", 0.33);
+});
+</script>
+
+</body>
+</html>

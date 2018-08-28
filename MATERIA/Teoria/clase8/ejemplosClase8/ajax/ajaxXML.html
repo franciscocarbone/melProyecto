@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+<title>Primera Aplicacion AJAX usando XML</title>
+
+<script language="javascript"  type="text/javascript">
+
+var url = "retornoCPXML.php?param="; 
+
+function handleHttpResponse() {
+ if (http.readyState == 4) 
+ {	resultado=http.responseXML.getElementsByTagName("Nombre");
+    document.getElementById('ciudad').value =resultado[0].firstChild.nodeValue;
+	resultado=http.responseXML.getElementsByTagName("Provincia");
+	document.getElementById('provincia').value =resultado[0].firstChild.nodeValue;
+ }
+}
+
+
+function actualizoCiudad() {
+ var codigo = document.getElementById("CP").value; 
+
+ http.open("GET", url + escape(codigo), true); 
+ http.onreadystatechange = handleHttpResponse; 
+ http.send(null);
+
+}
+
+
+function getHTTPObject() {
+ var xmlhttp;
+
+  var xmlhttp;
+
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+  
+	return xmlhttp;
+}
+
+var http = getHTTPObject(); 
+</script>
+</head>
+
+<body>
+<h1> El primer ejemplo de Ajax usando XML</h1>
+
+<form >
+  <label for ="cp">
+  C&oacute;digo Postal:
+  </label>
+  <input type="text" size="5" name="CP" id="CP" onblur="actualizoCiudad();" />
+  <label for="ciudad">
+  Ciudad:</label>
+  <input type="text" name="ciudad" id="ciudad" />
+  Provincia:
+  <input type="text" size="20" name="provincia" id="provincia" />
+  
+</form>
+</body>
+</html>

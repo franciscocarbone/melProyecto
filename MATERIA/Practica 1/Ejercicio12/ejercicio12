@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "­//W3C//DTD XHTML 1.1//EN"  
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<title>Ejercicio 12</title> 
+	<meta http-equiv="content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head> 
+<body> 
+	<div class="header">
+		<h1>Ejercicio 12</h1> 
+	</div>
+	<div class="barra">
+		<ul>
+			<li>
+				<span>Inicio</span>
+			</li>
+			<li>
+				<span>Usuarios</span>
+			</li>
+			<li>
+				<span>Muestras</span>
+			</li>
+			<li>
+				<span>Resultados</span>
+			</li>
+			<li>
+				<span>Reportes</span>
+			</li>
+			<li>
+				<span>Administración</span>
+			</li>
+			<li>
+				<span>Acerca de</span>
+			</li>
+		</ul>	
+		
+	</div>
+	<div class="container">
+		<div class="content">
+
+			<ul class="vcard">
+				<li class="fn n">
+					<strong class="nombre">Francisco</strong> <strong class="apellido">Carbone</strong><br>
+					<span class="org">Linti</span>
+				</li>
+				<li class="adr">
+					<span class="street-address">70 N1143</span><br>
+					<span class="locality">La Plata</span>, 
+					<abbr class="region" title="Una región">Buenos Aires</abbr>, 
+					<span class="postal-code">1900</span>, 
+					<abbr class="country-name" title="Un país">Argentina</abbr>
+				</li>
+				<li class="tel">
+					<strong class="type" title="Teléfono del trabajo">123456</strong>: <span class="value">45678</span>
+				</li>
+				<li class="url">
+					<strong class="type" title="Sitio web oficial del trabajo">pagina</strong>: <span class="value"><a rel="nofollow" class="external text" href="https://grupo_39.proyecto2014.linti.unlp.edu.ar/index.html">trabajo proyecto</a></span>
+				</li>
+
+		  		<div class="geo"> 
+		  			<span class="latitude">-34.9395011</span>; 
+		  			<span class="longitude">-57.9417302</span>
+		  		</div>
+
+			</ul>
+
+			
+
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="footer">
+		
+		
+	</div>
+</body> 
+</html> 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Mi Primer Aplicacion AJAX a mano</title>
+<meta charset="UTF-8">
+<script src="jquery-1.8.1.min.js"></script>
+<script>
+function procesoRespuesta(respuesta) {
+	
+	$('#ciudad').val(respuesta)
+
+}
+function muestroError() {
+alert("ERROR")
+}
+
+function actualizoCiudad(){
+var codValue = $("#CP").val(); 
+
+$.ajax({
+  url: 'retornoCP.php',
+  type: 'get',
+  async: true,
+  data: 'CP='+ escape(codValue),
+  success: procesoRespuesta,
+  error: muestroError
+});
+
+}
+</script>
+</head>
+<body>
+<h1>Primer ejemplo con JQuery </h1>
+<form >
+    <label for ="cp">   Código Postal:  </label>
+  <input type="text" size="5" name="CP" id="CP" onblur="actualizoCiudad();" />
+  <label for="ciudad">   Ciudad:</label>   <input type="text" name="ciudad" id="ciudad" />
+</form>
+</body>
+</html>

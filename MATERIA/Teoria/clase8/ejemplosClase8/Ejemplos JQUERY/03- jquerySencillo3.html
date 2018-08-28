@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Uno, dos, tres... probando..</title>
+<script src="jquery.js"></script>
+
+<script>
+
+	function desaparece(){
+		$('#lihuen').fadeTo(1200, 0.2, function() {alert("Termine")
+    });
+	}
+			
+</script>
+</head>
+
+<body>
+	<h1> Ejemplo sencillo con JQuery</h1>
+	<p>Este es el primer p&aacute;rrafo</p>
+	<p>Este es el segundo p&aacute;rrafo</p>
+	<p>Este es el tercer p&aacute;rrafo</p>
+	<img id="lihuen" src="lihuen.jpg" alt="Logo Lihuen">
+	<input type="button" value="Cambiamos los parrafos" onclick="desaparece()"/><br/> 
+
+  
+</body>
+</html>
